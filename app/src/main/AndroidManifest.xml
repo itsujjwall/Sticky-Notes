@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/notes"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/notes"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".AppWidget" android:label="Sticky /notes">
+            <intent-filter>
+                <action android:name="android.appwiget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.AppWidgetProvider"
+                android:resource="@xml/new_app_wiget_info"/>
+
+
+        </receiver>
+    </application>
+
+</manifest>
